@@ -1,0 +1,21 @@
+.nameCard{
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(255,255,255,0.1);
+    background-color: #00cccc;
+    margin: 15px 30px;
+    padding: 10px 20px;
+    text-align: center;
+    transition: background 0.3s;
+    font-size: 20px;
+    width: 12%;
+    overflow-x: auto;
+}
+.nameCard:hover{
+    background-color:cyan;
+    cursor: pointer;
+}
+
+.result_card{
+    margin: 0px;
+    font-weight: 100;
+}

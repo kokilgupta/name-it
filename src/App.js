@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import "./App.css";
+import Header from "./header/header";
+import Search from "./search/search";
+import Result from "./results/results";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const name=require("@rstacruz/startup-name-generator");
 
+const App = () => {
+    const [head, setHead] = useState("Name It!");
+    const[inputBool,setInputBool]=useState(false);
+    const[suggestedName,setSuggestedName]=useState([]);
+
+    const inputChangeHandler = (inputText) => {
+        inputText.length>0?setInputBool(true): setInputBool(false);
+        inputText.length>0?setSuggestedName(name(inputText)):setSuggestedName([]);
+    }
+
+    return (
+        <div>
+            <Header heading={head} inputBool={inputBool}/>
+            <Search onInputChange={inputChangeHandler}/>
+            <Result suggestedName={suggestedName}/>
+        </div>
+    );
+};
 export default App;

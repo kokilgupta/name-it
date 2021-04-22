@@ -1,0 +1,25 @@
+.search_bar{
+    width:20%;
+    height:40px;
+    padding: 8px 15px;
+    font-size: 20px;
+    border-width: 0;
+    /*background: #ccffff;*/
+    border-radius: 50px;
+}
+.search{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_bar:focus{
+    outline: none;
+}
+
+.search_bar::placeholder{
+    font-size: 20px;
+    text-align: center;
+}
